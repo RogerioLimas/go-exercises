@@ -3,6 +3,7 @@ package main
 import (
 	"crypto/rand"
 	"fmt"
+	"log"
 	"net/http"
 )
 
@@ -28,5 +29,6 @@ func giveRandomUUID(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	fmt.Println("Hello!")
+	mux := &UUID{}
+	log.Fatal(http.ListenAndServe(":8080", mux))
 }
