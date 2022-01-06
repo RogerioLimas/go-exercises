@@ -1,3 +1,3 @@
-module github.com/RogerioLimas/go-health-check
+module github.com/RogerioLimas/go-exercises
 
 go 1.17
