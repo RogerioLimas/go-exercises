@@ -13,14 +13,15 @@ import (
 func QueryHandler(w http.ResponseWriter, r *http.Request) {
 	queryParams := r.URL.Query()
 	w.WriteHeader(http.StatusOK)
-
-	fmt.Fprintf(w, queryParams["id"][0])
+	fmt.Fprintf(w, "Got parameter id: %s!\n", queryParams["id"][0])
+	fmt.Fprintf(w, "Got parameter category: %s!", queryParams["category"][0])
 }
 
 func main() {
 	r := mux.NewRouter()
 
-	r.HandleFunc("/articles", QueryHandler).Name()
+	r.HandleFunc("/articles", QueryHandler)
+	r.Queries("id", "category")
 
 	srv := &http.Server{
 		Handler: r,
