@@ -1,4 +1,4 @@
-module github.com/RogerioLimas/go-exercises/mutipleHandlers
+module github.com/RogerioLimas/go-exercises/httprouterExample
 
 go 1.17
 
