@@ -20,7 +20,7 @@ func QueryHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	r := mux.NewRouter()
 
-	r.HandleFunc("/blah", QueryHandler)
+	r.HandleFunc("/articles", QueryHandler).Name()
 
 	srv := &http.Server{
 		Handler: r,
